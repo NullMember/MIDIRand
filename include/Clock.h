@@ -11,6 +11,7 @@ private:
     Clock() {};
     void (*clock_callback)() = nullptr;
     uint8_t tempo = 120;
+    uint8_t tempo_divider = 4;
     int32_t interval_us = 0;
     int32_t last_us = 0;
     int32_t target_us = 0;
@@ -23,9 +24,11 @@ public:
     void update();
     void set_tempo(uint8_t);
     uint8_t get_tempo();
+    void set_divider(uint8_t);
+    uint8_t get_divider();
     void set_random(uint8_t percentage);
     uint8_t get_random();
-    void set_callback(void (*callback)());
+    // void set_callback(void (*callback)());
 };
 
 #endif //CLOCK
